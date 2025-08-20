@@ -1,12 +1,10 @@
 <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+  // 🔥 Charger Firebase (mode compat pour HTML simple)
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js';
+  import { getAuth } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js';
+  import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js';
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  // 🔐 Ta configuration Firebase
   const firebaseConfig = {
     apiKey: "AIzaSyAGD3U5XUqQuhxP2JxxltnNnCPLk3CIVDw",
     authDomain: "gestion-financiere-tnd.firebaseapp.com",
@@ -17,7 +15,14 @@
     measurementId: "G-WDFVCES5D0"
   };
 
-  // Initialize Firebase
+  // ✅ Initialiser Firebase
   const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+
+  // ✅ Services disponibles partout
+  const auth = getAuth();
+  const db = getFirestore();
+
+  // 🛠️ Optionnel : si tu veux analytics
+  // import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics-compat.js';
+  // const analytics = getAnalytics(app);
 </script>
