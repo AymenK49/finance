@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header>
+    <button id="menuBtn">☰</button>
+    <h1>Dashboard</h1>
+    <span id="syncStatus" title="État de synchronisation">🟢</span>
+  </header>
+
+  <nav id="sidebar">
+    <ul>
+      <li><a href="dashboard.html">🏠 Accueil</a></li>
+      <li><a href="#" id="logoutBtn">🚪 Déconnexion</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h2>Solde : <span id="solde">0,000 TND</span></h2>
+
+    <section>
+      <h3>➕ Ajouter une dépense</h3>
+      <input type="text" id="type" placeholder="Type (ex: Famille)" />
+      <input type="number" id="montantDepense" placeholder="Montant (TND)" step="0.001" />
+      <input type="date" id="dateDepense" />
+      <button onclick="ajouterDepense()">Ajouter</button>
+    </section>
+
+    <section>
+      <h3>➕ Ajouter un revenu</h3>
+      <input type="text" id="source" placeholder="Source (ex: Salaire)" />
+      <input type="number" id="montantRevenu" placeholder="Montant (TND)" step="0.001" />
+      <input type="date" id="dateRevenu" />
+      <button onclick="ajouterRevenu()">Ajouter</button>
+    </section>
+
+    <section>
+      <h3>📊 Historique des dépenses</h3>
+      <table id="depensesTable">
+        <thead><tr><th>Type</th><th>Montant</th><th>Date</th><th>Suppr</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h3>📈 Historique des revenus</h3>
+      <table id="revenusTable">
+        <thead><tr><th>Source</th><th>Montant</th><th>Date</th><th>Suppr</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </div>
+</body>
+</html>

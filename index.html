@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestion Financière TND</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/icons/icon-192.png" type="image/png" />
+</head>
+<body>
+  <div class="container">
+    <h1>💼 Gestion Financière</h1>
+    <p>Suivez vos dépenses et revenus en TND</p>
+    <div class="btn-group">
+      <a href="login.html" class="btn">Se connecter</a>
+    </div>
+  </div>
+  <script>
+    // Vérifier si l'app est installée
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      // Tu peux afficher un bouton "Installer"
+    });
+  </script>
+</body>
+</html>
